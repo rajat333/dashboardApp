@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import history from "./history/history";
+import { history } from "./history/history";
 
 class SignInForm extends Component {
-    constructor() {
-        super();
-
+    constructor(props) {
+        super(props);
         this.state = {
             email: '',
             password: ''
@@ -27,11 +26,9 @@ class SignInForm extends Component {
 
     handleSubmit(e) {
         e.preventDefault();
-
         console.log('The form was submitted with the following data:');
         console.log(this.state);
         history.push("/dashboard");
-
     }
 
     render() {
@@ -49,7 +46,11 @@ class SignInForm extends Component {
               </div>
 
               <div className="FormField">
-                  <button className="FormField__Button mr-20">Sign In</button> <Link to="/" className="FormField__Link">Create an account</Link>
+                  <button className="FormField__Button mr-20">
+                  <Link to="/dashboard"> Sign In </Link>
+                  </button> 
+                  
+                  <Link to="/" className="FormField__Link">Create an account</Link>
               </div>
             </form>
           </div>
