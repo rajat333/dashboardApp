@@ -1,5 +1,6 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { Component } from 'react';
+import "./Dashboard.css";
 // import { Link } from 'react-router-dom';
 // import { history } from "./history/history";
 
@@ -17,6 +18,14 @@ class Dashboard extends Component {
         console.log("in dasboard render");
         return (
         <div className="FormCenter Dashboard">
+        
+        <div class="sidenav">
+  <a href="#about">About</a>
+  <a href="#services">Services</a>
+  <a href="#clients">Clients</a>
+  <a href="#contact">Contact</a>
+</div>
+          <div className="main">
           <table className="table table-striped">
     <thead>
       <tr>
@@ -53,6 +62,8 @@ class Dashboard extends Component {
       </tr>
     </tbody>
   </table>
+       
+          </div>
         </div>
         );
     }
