@@ -91,7 +91,9 @@ class Dashboard extends Component {
         <div class="modal-body">
           Modal body..
         </div>
-        
+        <iframe src="http://localhost:3000/">
+  <p>Your browser does not support iframes.</p>
+</iframe>
         {/* <!-- Modal footer --> */}
         <div class="modal-footer">
           <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
