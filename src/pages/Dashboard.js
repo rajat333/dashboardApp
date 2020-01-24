@@ -10,8 +10,16 @@ class Dashboard extends Component {
             selectedUser :{ },
             enablePopUp:false,
         };
+        this.openPopUp = this.openPopUp.bind(this);
     }
     
+    openPopUp(event){
+        console.log("in open popup",event.target.id);
+        this.setState({
+          enablePopUp:true
+        })
+    }
+
     render() {
         console.log("in dasboard render");
         return (
@@ -39,8 +47,12 @@ class Dashboard extends Component {
               <td>Doe</td>
               <td>john@example.com</td>
               <td>
-                <a className="add" title="Add" data-toggle="tooltip">  <i class="fas fa-file"></i></a>
+                <a className="add" >  
+                <i class="fa fa-file" onClick={ this.openPopUp } id="John"  data-toggle="modal" data-target="#myModal" ></i></a>
               </td>
+              {/* <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+    Open modal
+  </button> */}
             </tr>
             <tr>
               <td>Mary</td>
@@ -61,7 +73,35 @@ class Dashboard extends Component {
             </tbody>
           </table>
           </div>
+
+          
+
+  {/* <!-- The Modal --> */}
+  <div class="modal" id="myModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+      
+        {/* <!-- Modal Header --> */}
+        <div class="modal-header">
+          <h4 class="modal-title">Modal Heading</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
         </div>
+        
+        {/* <!-- Modal body --> */}
+        <div class="modal-body">
+          Modal body..
+        </div>
+        
+        {/* <!-- Modal footer --> */}
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+
+        </div> 
         );
     }
 }
